@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://github.com/jeremytammik/RevitLookup/releases/latest"><img src="https://img.shields.io/github/v/release/jeremytammik/RevitLookup?style=for-the-badge"></a>
   <a href="https://github.com/jeremytammik/RevitLookup/releases/latest"><img src="https://img.shields.io/github/downloads/jeremytammik/RevitLookup/total?style=for-the-badge"></a>
-  <a href="https://github.com/jeremytammik/RevitLookup/commits/dev"><img src="https://img.shields.io/github/last-commit/jeremytammik/RevitLookup/dev?style=for-the-badge"></a>
+  <a href="https://github.com/jeremytammik/RevitLookup/commits"><img src="https://img.shields.io/github/last-commit/jeremytammik/RevitLookup?style=for-the-badge"></a>
   <a href="https://actions-badge.atrox.dev/jeremytammik/RevitLookup/goto?ref=master"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fjeremytammik%2FRevitLookup%2Fbadge%3Fref%3Dmaster&style=for-the-badge"></a>
 </p>
 
@@ -18,19 +18,19 @@ Please refer to [The Building Coder](http://thebuildingcoder.typepad.com) for mo
 
 The installer contains all the latest versions starting from the 2015 version of Revit.
 
-## Build
+## For developers
 
 Debugging:
 
-- Run **Debug Profile** in Visual Studio or **Run Configuration** in JetBrains Rider. The required files have been added. All project files will be automatically copied to the
+- Run **Debug Profile** in Visual Studio or **Run Configuration** in JetBrains Rider. All project files will be automatically copied to the
   Revit plugins folder.
 
 Creating a package:
 
-- Open the terminal of your IDE.
+- Open Command Prompt, Powershell, or another terminal.
 - Install Nuke global tools `dotnet tool install Nuke.GlobalTool --global`.
 - Run `nuke` command.
-- The generated package will be in the **output** folder.
+- The generated installer can be found in the **output** folder at the root of the solution.
 
 For more information on building, see the [**RevitTemplates**](https://github.com/Nice3point/RevitTemplates) Wiki page.
 
