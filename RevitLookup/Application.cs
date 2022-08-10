@@ -18,31 +18,25 @@
 // Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
 // (Rights in Technical Data and Computer Software), as applicable.
 
-using Autodesk.Revit.UI;
+using Nice3point.Revit.Toolkit.External;
 using RevitLookup.Commands;
 using RevitLookup.Core;
 
 namespace RevitLookup;
 
 [UsedImplicitly]
-public class Application : IExternalApplication
+public class Application : ExternalApplication
 {
-    public Result OnStartup(UIControlledApplication application)
+    public override void OnStartup()
     {
-        CreateRibbonPanel(application);
-        ModelessWindowHandle.SetHandler(application.MainWindowHandle);
+        CreateRibbonPanel();
+        ModelessWindowHandle.SetHandler(Application.MainWindowHandle);
         ExternalExecutor.CreateExternalEvent();
-        return Result.Succeeded;
     }
 
-    public Result OnShutdown(UIControlledApplication application)
+    private void CreateRibbonPanel()
     {
-        return Result.Succeeded;
-    }
-
-    private static void CreateRibbonPanel(UIControlledApplication application)
-    {
-        var ribbonPanel = application.CreatePanel("Revit Lookup");
+        var ribbonPanel = Application.CreatePanel("Revit Lookup");
         var pullDownButton = ribbonPanel.AddPullDownButton("Options", "Revit Lookup");
         pullDownButton.SetImage("/RevitLookup;component/Resources/Images/RibbonIcon16.png");
         pullDownButton.SetLargeImage("/RevitLookup;component/Resources/Images/RibbonIcon32.png");

@@ -19,19 +19,17 @@
 // (Rights in Technical Data and Computer Software), as applicable.
 
 using Autodesk.Revit.Attributes;
-using Autodesk.Revit.DB;
-using Autodesk.Revit.UI;
+using Nice3point.Revit.Toolkit.External;
 using RevitLookup.Views;
 
 namespace RevitLookup.Commands;
 
 [Transaction(TransactionMode.Manual)]
-public class AboutCommand : IExternalCommand
+public class AboutCommand : ExternalCommand
 {
-    public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+    public override void Execute()
     {
         var aboutView = new AboutView();
         aboutView.ShowDialog();
-        return Result.Succeeded;
     }
 }

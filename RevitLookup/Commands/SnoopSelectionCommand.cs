@@ -19,8 +19,7 @@
 // (Rights in Technical Data and Computer Software), as applicable.
 
 using Autodesk.Revit.Attributes;
-using Autodesk.Revit.DB;
-using Autodesk.Revit.UI;
+using Nice3point.Revit.Toolkit.External;
 using RevitLookup.Core;
 using RevitLookup.Views;
 
@@ -31,12 +30,11 @@ namespace RevitLookup.Commands;
 ///     In case nothing is selected: browse visible elements
 /// </summary>
 [Transaction(TransactionMode.Manual)]
-public class SnoopSelectionCommand : IExternalCommand
+public class SnoopSelectionCommand :ExternalCommand
 {
-    public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+    public override void Execute()
     {
         var form = new ObjectsView();
         form.SnoopAndShow(Selector.SnoopCurrentSelection);
-        return Result.Succeeded;
     }
 }

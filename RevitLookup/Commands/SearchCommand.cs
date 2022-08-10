@@ -19,8 +19,7 @@
 // (Rights in Technical Data and Computer Software), as applicable.
 
 using Autodesk.Revit.Attributes;
-using Autodesk.Revit.DB;
-using Autodesk.Revit.UI;
+using Nice3point.Revit.Toolkit.External;
 using RevitLookup.Core;
 using RevitLookup.Views;
 
@@ -30,15 +29,11 @@ namespace RevitLookup.Commands;
 ///     Search by and Snoop command: Browse elements found by the condition
 /// </summary>
 [Transaction(TransactionMode.Manual)]
-public class SearchCommand : IExternalCommand
+public class SearchCommand : ExternalCommand
 {
-    public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+    public override void Execute()
     {
-        var uiDocument = commandData.Application.ActiveUIDocument;
-        var document = uiDocument.Document;
-        var form = new SearchByView(document);
+        var form = new SearchByView(Document);
         ModelessWindowFactory.Show(form);
-
-        return Result.Succeeded;
     }
 }

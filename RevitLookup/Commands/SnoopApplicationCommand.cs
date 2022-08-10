@@ -19,8 +19,7 @@
 // (Rights in Technical Data and Computer Software), as applicable.
 
 using Autodesk.Revit.Attributes;
-using Autodesk.Revit.DB;
-using Autodesk.Revit.UI;
+using Nice3point.Revit.Toolkit.External;
 using RevitLookup.Core;
 using RevitLookup.Views;
 
@@ -30,12 +29,11 @@ namespace RevitLookup.Commands;
 ///     Snoop App command:  Browse all objects that are part of the Application object
 /// </summary>
 [Transaction(TransactionMode.Manual)]
-public class SnoopApplicationCommand : IExternalCommand
+public class SnoopApplicationCommand : ExternalCommand
 {
-    public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+    public override void Execute()
     {
         var form = new ObjectsView();
         form.SnoopAndShow(Selector.SnoopApplication);
-        return Result.Succeeded;
     }
 }

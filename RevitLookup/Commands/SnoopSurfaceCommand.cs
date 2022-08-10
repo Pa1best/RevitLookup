@@ -19,20 +19,18 @@
 // (Rights in Technical Data and Computer Software), as applicable.
 
 using Autodesk.Revit.Attributes;
-using Autodesk.Revit.DB;
-using Autodesk.Revit.UI;
+using Nice3point.Revit.Toolkit.External;
 using RevitLookup.Core;
 using RevitLookup.Views;
 
 namespace RevitLookup.Commands;
 
 [Transaction(TransactionMode.Manual)]
-public class SnoopSurfaceCommand : IExternalCommand
+public class SnoopSurfaceCommand : ExternalCommand
 {
-    public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+    public override void Execute()
     {
         var form = new ObjectsView();
         form.SnoopAndShow(Selector.SnoopPickFace);
-        return Result.Succeeded;
     }
 }
