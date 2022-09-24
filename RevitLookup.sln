@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitLookup", "RevitLookup\RevitLookup.csproj", "{05C77115-2277-4DFC-8F95-BE37E5F1130F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitLookupArchive", "RevitLookupArchive\RevitLookupArchive.csproj", "{05C77115-2277-4DFC-8F95-BE37E5F1130F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Installer", "Installer\Installer.csproj", "{B3814652-9158-4056-A721-1A380DE74BAE}"
 EndProject
